@@ -6,6 +6,7 @@ import UIKit
 protocol FlippableView: UIView{
     var isFlipped: Bool {get set}
     var complectionHandler: ((FlippableView)-> Void)? {get set}
+    func flipWithoutCheck()
     func flip()
 }
 
@@ -53,6 +54,10 @@ class CardView<ShapeType: ShapeProtocol> : UIView, FlippableView{
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if frame.origin == startTouchPoint{
             flip()
+           
+        }
+        if frame.maxY > (self.superview?.bounds.maxY)! || frame.minY < (self.superview?.bounds.minY)! || frame.maxX > (self.superview?.bounds.maxX)! || frame.minX < (self.superview?.bounds.minX)!{
+            returnToStartPoint()
         }
     }
     override func draw(_ rect: CGRect) {
@@ -61,13 +66,32 @@ class CardView<ShapeType: ShapeProtocol> : UIView, FlippableView{
         flipping()
     }
     
-     func flip() {
+    func flip() {
         let fromView = isFlipped ? frontView : backView
         let toView = isFlipped ? backView : frontView
         UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
             self.complectionHandler?(self)
         })
         isFlipped = !isFlipped
+    }
+    private func returnToStartPoint(){
+        UIView.animate(withDuration: 0.2, animations: { [self] in
+            frame.origin = startTouchPoint
+        })
+    }
+    
+    func flipWithoutCheck(){
+        let fromView = isFlipped ? frontView : backView
+        let toView = isFlipped ? backView : frontView
+        UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
+            self.complectionHandler?(self)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
+            UIView.transition(from: toView, to: fromView, duration: 0.5, options: [.transitionFlipFromTop], completion: { _ in
+                self.complectionHandler?(self)
+            })
+        }
+        
     }
     
     private func flipping(){

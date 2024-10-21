@@ -13,16 +13,12 @@ extension ShapeProtocol{
     }
 }
 
-
-
-// Создание фигуры круг
+// Создание фигуры круг c заливкой
 class CircleShape: CAShapeLayer, ShapeProtocol{
     required init(size: CGSize, fillColor: CGColor) {
         super.init()
-        // расчиываем данные для круга
         let radius = ([size.width, size.height].min() ?? 0) / 2
         let centerPoint = CGPoint(x: size.width / 2, y: size.height / 2)
-        
         let path =  UIBezierPath()
         path.addArc(withCenter: centerPoint, radius: radius, startAngle: 0, endAngle: .pi*2, clockwise: true)
         path.close()
@@ -33,18 +29,35 @@ class CircleShape: CAShapeLayer, ShapeProtocol{
         fatalError("init(coder:) has not been implemented")
     }
 }
+//Создание фигуры круг пусой
+class EmptyCircleShape: CAShapeLayer, ShapeProtocol{
+    required init(size: CGSize, fillColor: CGColor) {
+        super.init()
+        let radius = ([size.width, size.height].min() ?? 0) / 2
+        let centerPount = CGPoint(x: size.width / 2, y: size.height / 2)
+        let path  = UIBezierPath()
+        path.addArc(withCenter: centerPount, radius: radius, startAngle: 0, endAngle: .pi * 2, clockwise: true)
+        self.path = path.cgPath
+        self.fillColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0)
+        self.strokeColor = fillColor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}
 // создание фигуры квадрат
 class SquareShape: CAShapeLayer, ShapeProtocol{
     required init(size: CGSize, fillColor: CGColor) {
         super.init()
         let sideSquare = ([size.width, size.height].min() ?? 0)
-        
         let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: sideSquare, height: sideSquare))
         self.path = path.cgPath
         self.fillColor = fillColor
         
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
