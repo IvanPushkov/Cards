@@ -16,19 +16,29 @@ class BoardGameController: UIViewController {
     private var flippedCards = [UIView]()
     
     var cardViews = [UIView]()
-    var cardPairsAmount = 5
+    var cardPairsAmount = SettingModel.instance.amounrPairs
 
     lazy var game = getNewGame()
     lazy var startButtonView = getStartButtonView()
     lazy var flipButtonView = getFlipButtonView()
     lazy var boardGameView = getBoardGameView()
-    
-    override func loadView() {
+  
+       override func loadView() {
         super.loadView()
         view.backgroundColor = .white
         view.addSubview(startButtonView)
         view.addSubview(flipButtonView)
         view.addSubview(boardGameView)
+       
+        
+         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        editBackButton()
+    }
+    
+    private func editBackButton(){
+        navigationItem.backButtonTitle = "Назад"
     }
     
     private func getNewGame() -> Game{
@@ -77,7 +87,7 @@ class BoardGameController: UIViewController {
         let button  = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
         let guideSafeArea = self.view.safeAreaLayoutGuide
         let topPadding = guideSafeArea.layoutFrame.size.height
-        button.frame.origin.y = topPadding + button.frame.size.height + 20
+        button.frame.origin.y = topPadding + button.frame.size.height + 30
         button.center.x = view.center.x / 2
         button.setTitle("Старт", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -87,7 +97,7 @@ class BoardGameController: UIViewController {
         button.addTarget(nil, action: #selector(startGame), for: .touchUpInside)
         return button
     }
-    
+ 
     private func getCardsBy(modelData: [Card])-> [UIView]{
         let cardFactory = CardViewFactory()
         for (index, modelCard) in modelData.enumerated(){
@@ -158,12 +168,21 @@ class BoardGameController: UIViewController {
     private func finishGame(){
         game.tryToSaveNewScore()
         let alert = UIAlertController(title: "Игра окончена", message: game.getFinalResult(), preferredStyle: .alert)
-        let alertButton = UIAlertAction(title: "Новая игра", style: .default){ [self] action in
+        let startNewGame = UIAlertAction(title: "Новая игра", style: .default){ [self] action in
             startGame()
         }
-        alert.addAction(alertButton)
+        let lookRecord = UIAlertAction(title: "Посмотреть рекорды", style: .default){ _ in
+            self.goToRecords()
+        }
+        alert.addAction(startNewGame)
+        alert.addAction(lookRecord)
         present(alert, animated: true)
     }
+    private func goToRecords(){
+        navigationController?.pushViewController(RecordsController(), animated: true)
+    }
+    
+    
     
     @objc func startGame(){
         game = getNewGame()
@@ -184,5 +203,9 @@ class BoardGameController: UIViewController {
             
             }
         }
+    }
+    @objc func toFirstScreen(){
+        navigationController?.popToRootViewController(animated: true)
+        print("Работата")
     }
 }

@@ -11,16 +11,13 @@ import CoreData
 
 
 extension GameStorage {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<GameStorage> {
         return NSFetchRequest<GameStorage>(entityName: "GameStorage")
     }
-
     @NSManaged public var score: Int16
     @NSManaged public var cardPairsAmount: Int16
-
 }
 
 extension GameStorage : Identifiable {
-
+    
 }

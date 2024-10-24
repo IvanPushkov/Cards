@@ -22,21 +22,11 @@ class CoreDataManager{
     lazy var context: NSManagedObjectContext = {
         persistentContainer.viewContext
     }()
-     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameStorage")
-    private func cleanStorage(pairsAmount: Int){
-        do{
-            let results = try context.fetch(fetchRequest) as! [GameStorage]
-            for result in results{
-                if Int16(pairsAmount) == result.cardPairsAmount{
-                    context.delete(result)
-                }
-            }
-        } catch {
-            print(error)
-        }
-    }
-     
     
+    func makeFetchRequest(entityName:String) -> NSFetchRequest<NSFetchRequestResult>{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        return fetchRequest
+    }
       func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -52,6 +42,15 @@ class CoreDataManager{
     func getEntityForName(entityName: String) -> NSEntityDescription{
         return NSEntityDescription.entity(forEntityName: entityName, in: context)!
     }
+
+    func getValueFromStorage<T: NSManagedObject>(withEntytiName entity: String) -> [T] {
+       do {
+           let results = try context.fetch(makeFetchRequest(entityName: entity))
+           return results as! [T]
+       } catch {
+           return [T]()
+       }
+   }
 }
 
 

@@ -12,6 +12,16 @@
 		D76FB5912CC3E31F0096736C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76FB58F2CC3E31F0096736C /* Model.xcdatamodeld */; };
 		D76FB59C2CC673A40096736C /* GameStorage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */; };
 		D76FB59D2CC673A40096736C /* GameStorage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */; };
+		D770DA2D2CC70F1200C57DBC /* RecordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D770DA2C2CC70F1200C57DBC /* RecordsController.swift */; };
+		D77B99E12CC7F7C900B3652B /* SettingColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E02CC7F7C900B3652B /* SettingColorController.swift */; };
+		D77B99E62CC814F900B3652B /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E52CC814F900B3652B /* SettingModel.swift */; };
+		D77B99F92CCA520600B3652B /* PairsAmount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */; };
+		D77B99FA2CCA520600B3652B /* PairsAmount+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99F42CCA520600B3652B /* PairsAmount+CoreDataProperties.swift */; };
+		D77B9A002CCA792A00B3652B /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99FF2CCA792A00B3652B /* SettingController.swift */; };
+		D77B9A072CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B9A052CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift */; };
+		D77B9A082CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B9A062CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift */; };
+		D77B9A0B2CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B9A092CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift */; };
+		D77B9A0C2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B9A0A2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift */; };
 		D7A91E322CC29469009AE660 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A91E312CC29469009AE660 /* CoreDataManager.swift */; };
 		D7DF3FB12CBC25FB00C4C0BD /* ViewShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF3FB02CBC25FB00C4C0BD /* ViewShapes.swift */; };
 		D7DF3FB32CBC261E00C4C0BD /* ViewCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DF3FB22CBC261E00C4C0BD /* ViewCards.swift */; };
@@ -31,6 +41,16 @@
 		D76FB5902CC3E31F0096736C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D770DA2C2CC70F1200C57DBC /* RecordsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsController.swift; sourceTree = "<group>"; };
+		D77B99E02CC7F7C900B3652B /* SettingColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingColorController.swift; sourceTree = "<group>"; };
+		D77B99E52CC814F900B3652B /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PairsAmount+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D77B99F42CCA520600B3652B /* PairsAmount+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PairsAmount+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D77B99FF2CCA792A00B3652B /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		D77B9A052CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardShapeStorage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D77B9A062CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardShapeStorage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D77B9A092CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardColorStorage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D77B9A0A2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardColorStorage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7A91E312CC29469009AE660 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D7DF3FB02CBC25FB00C4C0BD /* ViewShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShapes.swift; sourceTree = "<group>"; };
 		D7DF3FB22CBC261E00C4C0BD /* ViewCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCards.swift; sourceTree = "<group>"; };
@@ -66,10 +86,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D770DA292CC70BFC00C57DBC /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				D7DF3FB02CBC25FB00C4C0BD /* ViewShapes.swift */,
+				D7DF3FB22CBC261E00C4C0BD /* ViewCards.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		D7A91E3E2CC2A0D7009AE660 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				D76FB58F2CC3E31F0096736C /* Model.xcdatamodeld */,
+				D77B9A052CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift */,
+				D77B9A062CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift */,
+				D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */,
+				D77B99F42CCA520600B3652B /* PairsAmount+CoreDataProperties.swift */,
 				D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */,
 				D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */,
 				D7A91E312CC29469009AE660 /* CoreDataManager.swift */,
@@ -77,13 +110,12 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		D7DF3FAD2CBC256600C4C0BD /* View */ = {
+		D7DF3FAD2CBC256600C4C0BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D7DF3FB22CBC261E00C4C0BD /* ViewCards.swift */,
-				D7DF3FB02CBC25FB00C4C0BD /* ViewShapes.swift */,
+				D770DA292CC70BFC00C57DBC /* GameView */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D7DF3FAE2CBC258300C4C0BD /* Model */ = {
@@ -91,6 +123,7 @@
 			children = (
 				D7DF3FB62CBC329700C4C0BD /* CardModel.swift */,
 				D7DF3FB82CBC352B00C4C0BD /* Game.swift */,
+				D77B99E52CC814F900B3652B /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,7 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				D703890B2CC24C8300BDE12E /* StartController.swift */,
+				D77B99FF2CCA792A00B3652B /* SettingController.swift */,
+				D77B99E02CC7F7C900B3652B /* SettingColorController.swift */,
 				D7DF3FB42CBC30C500C4C0BD /* BoardGameController.swift */,
+				D770DA2C2CC70F1200C57DBC /* RecordsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +151,8 @@
 		D7F9AEB82CB56A07000D1276 = {
 			isa = PBXGroup;
 			children = (
+				D77B9A092CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift */,
+				D77B9A0A2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift */,
 				D7F9AEC32CB56A07000D1276 /* Cards */,
 				D7F9AEC22CB56A07000D1276 /* Products */,
 				D76FB58C2CC3DC710096736C /* Frameworks */,
@@ -137,7 +175,7 @@
 				D7A91E3E2CC2A0D7009AE660 /* Storage */,
 				D7DF3FBA2CBE565900C4C0BD /* Helpers */,
 				D7DF3FAE2CBC258300C4C0BD /* Model */,
-				D7DF3FAD2CBC256600C4C0BD /* View */,
+				D7DF3FAD2CBC256600C4C0BD /* Views */,
 				D7DF3FAF2CBC258B00C4C0BD /* Controller */,
 				D7F9AECD2CB56A0D000D1276 /* Assets.xcassets */,
 				D7F9AECF2CB56A0D000D1276 /* LaunchScreen.storyboard */,
@@ -216,18 +254,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77B99E12CC7F7C900B3652B /* SettingColorController.swift in Sources */,
 				D76FB59D2CC673A40096736C /* GameStorage+CoreDataProperties.swift in Sources */,
 				D7DF3FB52CBC30C500C4C0BD /* BoardGameController.swift in Sources */,
 				D7F9AEC52CB56A07000D1276 /* AppDelegate.swift in Sources */,
 				D76FB5912CC3E31F0096736C /* Model.xcdatamodeld in Sources */,
+				D77B9A082CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift in Sources */,
+				D77B99FA2CCA520600B3652B /* PairsAmount+CoreDataProperties.swift in Sources */,
+				D77B99F92CCA520600B3652B /* PairsAmount+CoreDataClass.swift in Sources */,
+				D77B9A072CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift in Sources */,
+				D77B9A002CCA792A00B3652B /* SettingController.swift in Sources */,
 				D703890C2CC24C8300BDE12E /* StartController.swift in Sources */,
+				D77B9A0B2CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift in Sources */,
 				D7DF3FB92CBC352B00C4C0BD /* Game.swift in Sources */,
 				D76FB59C2CC673A40096736C /* GameStorage+CoreDataClass.swift in Sources */,
 				D7DF3FB12CBC25FB00C4C0BD /* ViewShapes.swift in Sources */,
 				D7F9AEC72CB56A07000D1276 /* SceneDelegate.swift in Sources */,
 				D7DF3FBC2CBE568B00C4C0BD /* CardViewFactory.swift in Sources */,
 				D7DF3FB32CBC261E00C4C0BD /* ViewCards.swift in Sources */,
+				D77B99E62CC814F900B3652B /* SettingModel.swift in Sources */,
+				D77B9A0C2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift in Sources */,
 				D7A91E322CC29469009AE660 /* CoreDataManager.swift in Sources */,
+				D770DA2D2CC70F1200C57DBC /* RecordsController.swift in Sources */,
 				D7DF3FB72CBC329700C4C0BD /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +422,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,7 +450,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

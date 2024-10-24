@@ -3,6 +3,8 @@
 import Foundation
 
 class Game{
+    static let instance = Game()
+    init(){}
     private let storage = CoreDataManager.instance
     
     var corentCardAmount: Int = 0
@@ -33,35 +35,28 @@ class Game{
     
     func tryToSaveNewScore(){
         let records = getRecords()
-        var recordScore: Int16?
         for record in records{
             if record.cardPairsAmount == Int16(startCardAmount){
                 if record.score > score{
-                    let newRecord = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
-                    recordScore = newRecord.score
-                } else{
-                    recordScore = 1
+                    saveNewRecord(newRecord: record)
+                    return
                 }
+                return
             }
         }
-        if recordScore == nil{
-            GameStorage(score: score, pairsAmount: Int16(startCardAmount))
-        }
+        GameStorage(score: score, pairsAmount: Int16(startCardAmount))
         storage.saveContext()
     }
     
-    func getRecords() -> [GameStorage] {
-        var storageAray = [GameStorage]()
-        do {
-            let results = try storage.context.fetch(storage.fetchRequest)
-            for result in results as! [GameStorage]{
-                storageAray.append(result)
-            }
-            return storageAray
-        } catch {
-            return storageAray
-        }
+    private func saveNewRecord(newRecord record: GameStorage){
+        storage.context.delete(record)
+        let newRecord = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
     }
+    
+     func getRecords() -> [GameStorage] {
+         storage.getValueFromStorage(withEntytiName: "GameStorage")
+    }
+    
    private func getScoreForCorentAmount() -> Int{
         let records = getRecords()
         var recordScore = 0

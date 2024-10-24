@@ -22,3 +22,5 @@ enum CardColor: CaseIterable{
 }
 
 typealias Card = (type: CardType, color: CardColor)
+typealias AccessibilityShape = (color: CardType, available: Bool)
+typealias AvailableColor = (color: CardColor, available: Bool)
