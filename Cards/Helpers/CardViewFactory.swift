@@ -12,7 +12,6 @@ class CardViewFactory{
         let frame = CGRect(origin: .zero, size: size)
         let viewColor = getViewColorBy(modelColor: color)
         
-        
         switch shape{
         case .cross:
             return CardView<CrossShape>(frame: frame, color: viewColor)
@@ -26,6 +25,7 @@ class CardViewFactory{
             return CardView<EmptyCircleShape>(frame: frame, color: viewColor)
         }
     }
+    
     private func getViewColorBy(modelColor: CardColor) -> UIColor{
         switch modelColor{
         case .black:

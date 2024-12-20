@@ -16,7 +16,7 @@ extension CardColorStorage {
         return NSFetchRequest<CardColorStorage>(entityName: "CardColorStorage")
     }
 
-    @NSManaged public var color: String?
+   
     @NSManaged public var included: Bool
 
 }

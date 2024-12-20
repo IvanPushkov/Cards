@@ -16,7 +16,7 @@ extension CardShapeStorage {
         return NSFetchRequest<CardShapeStorage>(entityName: "CardShapeStorage")
     }
 
-    @NSManaged public var shape: String?
+  
     @NSManaged public var included: Bool
 
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22H123" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardColorStorage" representedClassName="CardColorStorage" syncable="YES">
-        <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="included" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="CardShapeStorage" representedClassName="CardShapeStorage" syncable="YES">
-        <attribute name="included" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="shape" optional="YES" attributeType="String"/>
     </entity>
     <entity name="GameStorage" representedClassName="GameStorage" syncable="YES">

@@ -9,13 +9,30 @@ import Foundation
 
 protocol SettingModelProtocol{
     var amounrPairs: Int {get set}
-    var arrayOfColor: [AvailableColor] {get set}
+    var availableColors: [CardColor] {get set}
 //    var arrayOfShape: [AccessibilityShape] {get set}
     
 }
 
 class SettingModel: SettingModelProtocol{
-    var arrayOfColor = [AvailableColor]()
+    
+    var availableColors: [CardColor]{
+        get{
+           return getAvailableColor()
+        }
+        set(newAvailableColor){
+          deleteColorFromStorage()
+            for color in CardColor.allCases{
+                if newAvailableColor.contains(color){
+                    CardColorStorage(included: true)
+                }
+                else {
+                    CardColorStorage(included: false)
+                }
+            }
+            CoreDataManager.instance.saveContext()
+        }
+    }
     
     static let instance = SettingModel()
     var amounrPairs: Int  {
@@ -26,15 +43,39 @@ class SettingModel: SettingModelProtocol{
             saveNewAmount(newAmount: newValue)
         }
     }
-    func getAvailableColor() -> [AvailableColor]{
-        var results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage")
-        var arrayOfColor = [AvailableColor]()
-        for result in results as! [CardColorStorage]{
-            
-         //   arrayOfColor.append(AvailableColor(color: CardColor(result.color), available: result.included))
+    
+    private func deleteColorFromStorage(){
+        var results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage") as [CardColorStorage]
+        for result in results {
+            CoreDataManager.instance.context.delete(result)
+        }
+    }
+    
+    private func getAvailableColor() -> [CardColor]{
+       
+        var results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage") as [CardColorStorage]
+        var arrayOfColor = [CardColor]()
+        if results.isEmpty{
+          results = turnOnAllColords()
+        }
+       
+        for (index, result) in results.enumerated(){
+            if result.included{
+                arrayOfColor.append(CardColor.allCases[index])
+            }
         }
         return arrayOfColor
+        }
+
+    private func turnOnAllColords() -> [CardColorStorage]{
+        deleteColorFromStorage()
+        for _ in CardColor.allCases.enumerated(){
+            CardColorStorage(included: true)
+            CoreDataManager.instance.saveContext()
+        }
+        return CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage")
     }
+    
     
     func getAmountPairsFromStorage() -> PairsAmount{
         let results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "PairsAmount") as! [PairsAmount]
@@ -50,8 +91,6 @@ class SettingModel: SettingModelProtocol{
         PairsAmount(amount: Int16(newAmount))
         CoreDataManager.instance.saveContext()
     }
-   
-    
-    
+
 }
 

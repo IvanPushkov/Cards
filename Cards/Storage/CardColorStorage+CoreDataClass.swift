@@ -11,9 +11,9 @@ import CoreData
 
 @objc(CardColorStorage)
 public class CardColorStorage: NSManagedObject {
-    convenience init(color: String, included: Bool){
+    convenience init(included: Bool){
         self.init(entity: CoreDataManager.instance.getEntityForName(entityName: "CardColorStorage"), insertInto: CoreDataManager.instance.context)
         self.included = included
-        self.color = color
+       
     }
 }

@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D703890C2CC24C8300BDE12E /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D703890B2CC24C8300BDE12E /* StartController.swift */; };
+		D72925722CCFC6D4009946FB /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72925712CCFC6D4009946FB /* SettingTableViewCell.swift */; };
+		D745A6BA2D15A9450081A1A1 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745A6B92D15A9450081A1A1 /* CardButton.swift */; };
 		D76FB58E2CC3DC720096736C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76FB58D2CC3DC720096736C /* CoreData.framework */; };
 		D76FB5912CC3E31F0096736C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76FB58F2CC3E31F0096736C /* Model.xcdatamodeld */; };
 		D76FB59C2CC673A40096736C /* GameStorage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */; };
 		D76FB59D2CC673A40096736C /* GameStorage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */; };
 		D770DA2D2CC70F1200C57DBC /* RecordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D770DA2C2CC70F1200C57DBC /* RecordsController.swift */; };
-		D77B99E12CC7F7C900B3652B /* SettingColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E02CC7F7C900B3652B /* SettingColorController.swift */; };
+		D77B99E12CC7F7C900B3652B /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E02CC7F7C900B3652B /* ColorController.swift */; };
 		D77B99E62CC814F900B3652B /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E52CC814F900B3652B /* SettingModel.swift */; };
 		D77B99F92CCA520600B3652B /* PairsAmount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */; };
 		D77B99FA2CCA520600B3652B /* PairsAmount+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99F42CCA520600B3652B /* PairsAmount+CoreDataProperties.swift */; };
@@ -37,12 +39,14 @@
 
 /* Begin PBXFileReference section */
 		D703890B2CC24C8300BDE12E /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		D72925712CCFC6D4009946FB /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		D745A6B92D15A9450081A1A1 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		D76FB58D2CC3DC720096736C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D76FB5902CC3E31F0096736C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D770DA2C2CC70F1200C57DBC /* RecordsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsController.swift; sourceTree = "<group>"; };
-		D77B99E02CC7F7C900B3652B /* SettingColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingColorController.swift; sourceTree = "<group>"; };
+		D77B99E02CC7F7C900B3652B /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		D77B99E52CC814F900B3652B /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PairsAmount+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D77B99F42CCA520600B3652B /* PairsAmount+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PairsAmount+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -78,6 +82,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D745A6B62D15A5010081A1A1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D7F9AEC62CB56A07000D1276 /* SceneDelegate.swift */,
+				D7F9AEC42CB56A07000D1276 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D745A6B72D15A5670081A1A1 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				D7F9AED22CB56A0D000D1276 /* Info.plist */,
+				D7F9AECF2CB56A0D000D1276 /* LaunchScreen.storyboard */,
+				D7F9AECD2CB56A0D000D1276 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		D745A6B82D15A90D0081A1A1 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D745A6B92D15A9450081A1A1 /* CardButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		D76FB58C2CC3DC710096736C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				D76FB58F2CC3E31F0096736C /* Model.xcdatamodeld */,
+				D77B9A092CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift */,
+				D77B9A0A2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift */,
 				D77B9A052CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift */,
 				D77B9A062CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift */,
 				D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */,
@@ -133,7 +166,8 @@
 			children = (
 				D703890B2CC24C8300BDE12E /* StartController.swift */,
 				D77B99FF2CCA792A00B3652B /* SettingController.swift */,
-				D77B99E02CC7F7C900B3652B /* SettingColorController.swift */,
+				D77B99E02CC7F7C900B3652B /* ColorController.swift */,
+				D72925712CCFC6D4009946FB /* SettingTableViewCell.swift */,
 				D7DF3FB42CBC30C500C4C0BD /* BoardGameController.swift */,
 				D770DA2C2CC70F1200C57DBC /* RecordsController.swift */,
 			);
@@ -151,9 +185,8 @@
 		D7F9AEB82CB56A07000D1276 = {
 			isa = PBXGroup;
 			children = (
-				D77B9A092CCA87DB00B3652B /* CardColorStorage+CoreDataClass.swift */,
-				D77B9A0A2CCA87DB00B3652B /* CardColorStorage+CoreDataProperties.swift */,
 				D7F9AEC32CB56A07000D1276 /* Cards */,
+				D745A6B82D15A90D0081A1A1 /* UIComponents */,
 				D7F9AEC22CB56A07000D1276 /* Products */,
 				D76FB58C2CC3DC710096736C /* Frameworks */,
 			);
@@ -170,16 +203,13 @@
 		D7F9AEC32CB56A07000D1276 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				D7F9AEC42CB56A07000D1276 /* AppDelegate.swift */,
-				D7F9AEC62CB56A07000D1276 /* SceneDelegate.swift */,
+				D745A6B62D15A5010081A1A1 /* Application */,
 				D7A91E3E2CC2A0D7009AE660 /* Storage */,
 				D7DF3FBA2CBE565900C4C0BD /* Helpers */,
 				D7DF3FAE2CBC258300C4C0BD /* Model */,
 				D7DF3FAD2CBC256600C4C0BD /* Views */,
 				D7DF3FAF2CBC258B00C4C0BD /* Controller */,
-				D7F9AECD2CB56A0D000D1276 /* Assets.xcassets */,
-				D7F9AECF2CB56A0D000D1276 /* LaunchScreen.storyboard */,
-				D7F9AED22CB56A0D000D1276 /* Info.plist */,
+				D745A6B72D15A5670081A1A1 /* Resourses */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -254,12 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D77B99E12CC7F7C900B3652B /* SettingColorController.swift in Sources */,
+				D77B99E12CC7F7C900B3652B /* ColorController.swift in Sources */,
 				D76FB59D2CC673A40096736C /* GameStorage+CoreDataProperties.swift in Sources */,
 				D7DF3FB52CBC30C500C4C0BD /* BoardGameController.swift in Sources */,
 				D7F9AEC52CB56A07000D1276 /* AppDelegate.swift in Sources */,
+				D745A6BA2D15A9450081A1A1 /* CardButton.swift in Sources */,
 				D76FB5912CC3E31F0096736C /* Model.xcdatamodeld in Sources */,
 				D77B9A082CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift in Sources */,
+				D72925722CCFC6D4009946FB /* SettingTableViewCell.swift in Sources */,
 				D77B99FA2CCA520600B3652B /* PairsAmount+CoreDataProperties.swift in Sources */,
 				D77B99F92CCA520600B3652B /* PairsAmount+CoreDataClass.swift in Sources */,
 				D77B9A072CCA862900B3652B /* CardShapeStorage+CoreDataClass.swift in Sources */,
@@ -417,7 +449,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TX2TU96GUU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = Cards/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -445,7 +477,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TX2TU96GUU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = Cards/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

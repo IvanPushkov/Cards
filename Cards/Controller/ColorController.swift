@@ -7,12 +7,12 @@
 
 import UIKit
 
-class SettingColorController: UITableViewController {
+class ColorController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
+        tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        tableView.separatorStyle = .none
     }
 
     
@@ -26,20 +26,17 @@ class SettingColorController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 100
+        return SettingModel.instance.availableColors.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") else{
-            let newCell = UITableViewCell(style: .default, reuseIdentifier: "reuseIdentifier")
-            var config = newCell.defaultContentConfiguration()
-            config.text = "number -\(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as? SettingTableViewCell else{
+            let newCell = SettingTableViewCell(style: .default, reuseIdentifier: "SettingTableViewCell")
+            newCell.titleLable.text = "\(SettingModel.instance.availableColors[indexPath.row])"
+            newCell.switchLable.text = "On"
             return newCell
         }
-
-       
-
         return cell
     }
     

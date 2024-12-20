@@ -5,8 +5,9 @@ import UIKit
 class StartController: UIViewController {
     lazy var startButton = getStartButonView()
     lazy var settingButton = getSettingButtonView()
-    override func loadView() {
-        super.loadView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .gray
         view.addSubview(startButton)
         view.addSubview(settingButton)
@@ -28,6 +29,9 @@ class StartController: UIViewController {
         button.layer.cornerRadius = 20
         return button
     }
+    @objc func startButtonAaction(){
+        self.navigationController?.pushViewController(BoardGameController(), animated: true)
+    }
     
     private func getSettingButtonView() -> UIButton{
         let button = UIButton(frame: CGRect(x: 0, y: startButton.frame.maxY + 20, width: 150, height: 150))
@@ -39,15 +43,12 @@ class StartController: UIViewController {
         button.setBackgroundImage(UIImage(named: "Card"), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.brown, for: .highlighted)
-        button.addTarget(self, action: #selector(setButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(settingButtonAction), for: .touchUpInside)
         button.layer.cornerRadius = 20
         return button
     }
     
-    @objc func startButtonAaction(){
-        self.navigationController?.pushViewController(BoardGameController(), animated: true)
-    }
-    @objc func setButtonAction(){
+    @objc func settingButtonAction(){
         self.navigationController?.pushViewController(SettingController(), animated: true)
     }
 }
