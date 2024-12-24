@@ -34,6 +34,7 @@ final class CardButton: UIButton {
             verticalTitle.append("\n")
         }
         self.setTitle(verticalTitle, for: .normal)
+         self.titleLabel?.font = UIFont.systemFont(ofSize: 10)
     }
 
 }

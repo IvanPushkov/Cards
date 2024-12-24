@@ -15,6 +15,8 @@
 		D76FB59C2CC673A40096736C /* GameStorage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */; };
 		D76FB59D2CC673A40096736C /* GameStorage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */; };
 		D770DA2D2CC70F1200C57DBC /* RecordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D770DA2C2CC70F1200C57DBC /* RecordsController.swift */; };
+		D779AA402D1B470D00A32D20 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D779AA3F2D1B470D00A32D20 /* StartView.swift */; };
+		D779AA432D1B479D00A32D20 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D779AA422D1B479D00A32D20 /* SnapKit */; };
 		D77B99E12CC7F7C900B3652B /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E02CC7F7C900B3652B /* ColorController.swift */; };
 		D77B99E62CC814F900B3652B /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99E52CC814F900B3652B /* SettingModel.swift */; };
 		D77B99F92CCA520600B3652B /* PairsAmount+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */; };
@@ -46,6 +48,7 @@
 		D76FB59A2CC673A40096736C /* GameStorage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D76FB59B2CC673A40096736C /* GameStorage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameStorage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D770DA2C2CC70F1200C57DBC /* RecordsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsController.swift; sourceTree = "<group>"; };
+		D779AA3F2D1B470D00A32D20 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		D77B99E02CC7F7C900B3652B /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		D77B99E52CC814F900B3652B /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		D77B99F32CCA520600B3652B /* PairsAmount+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PairsAmount+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76FB58E2CC3DC720096736C /* CoreData.framework in Frameworks */,
+				D779AA432D1B479D00A32D20 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +105,6 @@
 			path = Resourses;
 			sourceTree = "<group>";
 		};
-		D745A6B82D15A90D0081A1A1 /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				D745A6B92D15A9450081A1A1 /* CardButton.swift */,
-			);
-			path = UIComponents;
-			sourceTree = "<group>";
-		};
 		D76FB58C2CC3DC710096736C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +120,23 @@
 				D7DF3FB22CBC261E00C4C0BD /* ViewCards.swift */,
 			);
 			path = GameView;
+			sourceTree = "<group>";
+		};
+		D779AA3D2D1B459400A32D20 /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+				D779AA3E2D1B46DC00A32D20 /* UI-Components */,
+				D779AA3F2D1B470D00A32D20 /* StartView.swift */,
+			);
+			path = StartView;
+			sourceTree = "<group>";
+		};
+		D779AA3E2D1B46DC00A32D20 /* UI-Components */ = {
+			isa = PBXGroup;
+			children = (
+				D745A6B92D15A9450081A1A1 /* CardButton.swift */,
+			);
+			path = "UI-Components";
 			sourceTree = "<group>";
 		};
 		D7A91E3E2CC2A0D7009AE660 /* Storage */ = {
@@ -146,6 +159,7 @@
 		D7DF3FAD2CBC256600C4C0BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D779AA3D2D1B459400A32D20 /* StartView */,
 				D770DA292CC70BFC00C57DBC /* GameView */,
 			);
 			path = Views;
@@ -186,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				D7F9AEC32CB56A07000D1276 /* Cards */,
-				D745A6B82D15A90D0081A1A1 /* UIComponents */,
 				D7F9AEC22CB56A07000D1276 /* Products */,
 				D76FB58C2CC3DC710096736C /* Frameworks */,
 			);
@@ -230,6 +243,9 @@
 			dependencies = (
 			);
 			name = Cards;
+			packageProductDependencies = (
+				D779AA422D1B479D00A32D20 /* SnapKit */,
+			);
 			productName = Cards;
 			productReference = D7F9AEC12CB56A07000D1276 /* Cards.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +274,9 @@
 				Base,
 			);
 			mainGroup = D7F9AEB82CB56A07000D1276;
+			packageReferences = (
+				D779AA412D1B479D00A32D20 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D7F9AEC22CB56A07000D1276 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +308,7 @@
 				D7DF3FB52CBC30C500C4C0BD /* BoardGameController.swift in Sources */,
 				D7F9AEC52CB56A07000D1276 /* AppDelegate.swift in Sources */,
 				D745A6BA2D15A9450081A1A1 /* CardButton.swift in Sources */,
+				D779AA402D1B470D00A32D20 /* StartView.swift in Sources */,
 				D76FB5912CC3E31F0096736C /* Model.xcdatamodeld in Sources */,
 				D77B9A082CCA862900B3652B /* CardShapeStorage+CoreDataProperties.swift in Sources */,
 				D72925722CCFC6D4009946FB /* SettingTableViewCell.swift in Sources */,
@@ -518,6 +538,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D779AA412D1B479D00A32D20 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D779AA422D1B479D00A32D20 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D779AA412D1B479D00A32D20 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D76FB58F2CC3E31F0096736C /* Model.xcdatamodeld */ = {
