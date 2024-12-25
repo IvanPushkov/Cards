@@ -29,7 +29,7 @@ final class CardButton: UIButton {
    
      func verticalTitle(title: String){
         var verticalTitle: String = ""
-        title.map { letter in
+        title.forEach { letter in
             verticalTitle.append(letter)
             verticalTitle.append("\n")
         }

@@ -1,17 +1,9 @@
-//
-//  SettingModel.swift
-//  Cards
-//
-//  Created by Ivan Pushkov on 22.10.2024.
-//
 
 import Foundation
 
 protocol SettingModelProtocol{
     var amounrPairs: Int {get set}
     var availableColors: [CardColor] {get set}
-//    var arrayOfShape: [AccessibilityShape] {get set}
-    
 }
 
 class SettingModel: SettingModelProtocol{
@@ -24,10 +16,10 @@ class SettingModel: SettingModelProtocol{
           deleteColorFromStorage()
             for color in CardColor.allCases{
                 if newAvailableColor.contains(color){
-                    CardColorStorage(included: true)
+                    _ = CardColorStorage(included: true)
                 }
                 else {
-                    CardColorStorage(included: false)
+                    _ = CardColorStorage(included: false)
                 }
             }
             CoreDataManager.instance.saveContext()
@@ -45,7 +37,7 @@ class SettingModel: SettingModelProtocol{
     }
     
     private func deleteColorFromStorage(){
-        var results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage") as [CardColorStorage]
+        let results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage") as [CardColorStorage]
         for result in results {
             CoreDataManager.instance.context.delete(result)
         }
@@ -70,14 +62,13 @@ class SettingModel: SettingModelProtocol{
     private func turnOnAllColords() -> [CardColorStorage]{
         deleteColorFromStorage()
         for _ in CardColor.allCases.enumerated(){
-            CardColorStorage(included: true)
+             _ = CardColorStorage(included: true)
             CoreDataManager.instance.saveContext()
         }
         return CoreDataManager.instance.getValueFromStorage(withEntytiName: "CardColorStorage")
     }
     
-    
-    func getAmountPairsFromStorage() -> PairsAmount{
+     func getAmountPairsFromStorage() -> PairsAmount{
         let results = CoreDataManager.instance.getValueFromStorage(withEntytiName: "PairsAmount") as! [PairsAmount]
         if results.isEmpty{
             return PairsAmount(amount: 3)
@@ -88,7 +79,7 @@ class SettingModel: SettingModelProtocol{
     func saveNewAmount(newAmount: Int){
         let oldAmount = getAmountPairsFromStorage()
         CoreDataManager.instance.context.delete(oldAmount)
-        PairsAmount(amount: Int16(newAmount))
+        _ = PairsAmount(amount: Int16(newAmount))
         CoreDataManager.instance.saveContext()
     }
 

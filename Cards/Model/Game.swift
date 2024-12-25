@@ -44,13 +44,13 @@ class Game{
                 return
             }
         }
-        GameStorage(score: score, pairsAmount: Int16(startCardAmount))
+        _ = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
         storage.saveContext()
     }
     
     private func saveNewRecord(newRecord record: GameStorage){
         storage.context.delete(record)
-        let newRecord = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
+        _ = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
     }
     
      func getRecords() -> [GameStorage] {
