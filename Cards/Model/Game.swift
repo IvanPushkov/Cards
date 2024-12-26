@@ -4,18 +4,22 @@ import Foundation
 
 class Game{
     static let instance = Game()
-    init(){}
     private let storage = CoreDataManager.instance
+    private var cardPairsAmount = SettingModel.instance.amountPairs
     
     var corentCardAmount: Int = 0
     var startCardAmount: Int = 0
     var cards = [Card]()
     var score: Int16 = 0
     
+    init(){
+        startNewGame()
+    }
+    
     func generateCards(){
         cards = []
         for _ in 0..<startCardAmount{
-            let randomCard: Card = (type: CardType.allCases.randomElement()!, color: CardColor.allCases.randomElement()!)
+            let randomCard: Card = (type: CardType.allCases.randomElement()!, color: ShapeAndColorStorageManager.instance.getIncludingColors().randomElement()!)
             cards.append(randomCard)
         }
     }
@@ -53,9 +57,6 @@ class Game{
         _ = GameStorage(score: score, pairsAmount: Int16(startCardAmount))
     }
     
-     func getRecords() -> [GameStorage] {
-         storage.getValueFromStorage(withEntytiName: "GameStorage")
-    }
     
    private func getScoreForCorentAmount() -> Int{
         let records = getRecords()
@@ -66,6 +67,14 @@ class Game{
             }
         }
             return recordScore
+    }
+    func getRecords() -> [GameStorage] {
+        storage.getValueFromStorage(withEntytiName: "GameStorage")
+    }
+     func startNewGame(){
+       startCardAmount = self.cardPairsAmount
+        corentCardAmount = self.cardPairsAmount
+        generateCards()
     }
 }
 

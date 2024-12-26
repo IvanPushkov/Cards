@@ -35,12 +35,13 @@ class SettingController: UIViewController {
         slider.center.x = view.center.x
         slider.maximumValue = 12
         slider.minimumValue = 1
-        slider.value = Float(SettingModel.instance.amounrPairs)
+        slider.value = Float(SettingModel.instance.amountPairs)
         slider.addTarget(nil, action: #selector(changePairsAmount), for: .valueChanged)
         return slider
     }
     private func getCollorTableview() -> UITableView{
         let colorTableView = colorController.tableView
+        colorTableView?.tintColor = .clear
         colorTableView?.frame.size = CGSize(width: view.frame.width - 20, height: (view.frame.height - 170) / 2)
         colorTableView?.center.x = view.center.x
         colorTableView?.frame.origin.y = amountPairsSlider.frame.maxY - 10
@@ -48,7 +49,9 @@ class SettingController: UIViewController {
     }
     
     @objc func changePairsAmount(){
-        SettingModel.instance.amounrPairs = Int(amountPairsSlider.value)
+        SettingModel.instance.amountPairs = Int(amountPairsSlider.value)
         amountPairsLable.text = "Колличество пар карточек - \(Int(amountPairsSlider.value))"
     }
 }
+
+ 

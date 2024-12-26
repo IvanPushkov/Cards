@@ -6,78 +6,57 @@
 //
 
 import UIKit
+import SnapKit
 
-class SettingTableViewCell: UITableViewCell {
-    
-    lazy var colorView = getColorView()
-    lazy var titleLable = getTitleLable()
-    lazy var switchColor = getSwitchColor()
-    lazy var switchLable = getSwitchLable()
-    
+final class SettingTableViewCell: UITableViewCell {
+    var titleLable: UILabel?
+    var switchColor: UISwitch?
+    var cardColor: CardColor?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
+        setConfigurationCell()
     }
-    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func getColorView() -> UIView{
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.frame.size = CGSize(width: 20, height: 20)
-        view.layer.cornerRadius = 10
-        view.backgroundColor = .gray
-        return view
-    }
+   
     
     private func getTitleLable() -> UILabel{
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 17)
+        contentView.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.width.equalToSuperview().multipliedBy(0.3)
+        }
         return label
     }
     
     private func getSwitchColor() -> UISwitch{
         let switchColor = UISwitch()
-        switchColor.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(switchColor)
+        switchColor.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview().inset(15)
+        }
         return switchColor
     }
-    private func getSwitchLable() -> UILabel{
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.font.withSize(20)
-        return label
-    }
-
-    func setupLayout(){
-        let mainStackView = UIStackView(arrangedSubviews: [colorView, titleLable])
-        
-        contentView.addSubview(mainStackView)
-        contentView.addSubview(switchColor)
-        contentView.addSubview(switchLable)
-        
-        NSLayoutConstraint.activate([
-            mainStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            
-            switchLable.leadingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: 20),
-            switchLable.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            switchLable.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
-            switchLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            
-            switchColor.trailingAnchor.constraint(equalTo: switchLable.trailingAnchor),
-            switchColor.bottomAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10),
-            contentView.heightAnchor.constraint(equalToConstant: 90)
-                        ])
+    
+    func setConfigurationCell(){
+        self.selectionStyle = .none
+        self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.layer.cornerRadius = 20
+        titleLable = getTitleLable()
+        switchColor = getSwitchColor()
     }
     
-    private func layautActivate(){
-        
+    func changeSwitchCondition(isOn: Bool, color: UIColor){
+        switchColor?.isOn = isOn
+        switchColor?.onTintColor = color
     }
-
+   
 }
 
 extension SettingTableViewCell{

@@ -29,28 +29,24 @@ final class GameView: UIView{
     }
     
     private func setFlipButton(){
-        flipButtonView = GameButton()
-        self.addSubview(flipButtonView!)
-        flipButtonView?.setTitle("Перевернуть", for: .normal)
-        flipButtonView!.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(100)
-            make.width.equalTo(150)
-            make.height.equalTo(50)
-            make.centerX.equalToSuperview().multipliedBy(1.5)
-        }
+        flipButtonView = createButton(title: "Перевернуть", multiplier: 1.5)
     }
     private func setStartButton(){
-        startButtonView  = GameButton()
-        self.addSubview(startButtonView!)
-        startButtonView?.setTitle("Старт", for: .normal)
-        startButtonView!.snp.makeConstraints { make in
+        startButtonView = createButton(title: "Старт", multiplier: 0.5)
+    }
+    private func createButton(title: String, multiplier: CGFloat) -> GameButton{
+        let button  = GameButton()
+        self.addSubview(button)
+        button.setTitle(title, for: .normal)
+        button.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
             make.width.equalTo(150)
             make.height.equalTo(50)
-            make.centerX.equalToSuperview().multipliedBy(0.5)
+            make.centerX.equalToSuperview().multipliedBy(multiplier)
         }
+        return button
     }
-    private func getGameBoardView(){
+    private func setupGameBoardView(){
         let margin = 10
         boardGameView  = UIView()
         boardGameView?.backgroundColor = UIColor(cgColor: CGColor(red: 0.1, green: 0.9, blue: 0.1, alpha: 0.3))
@@ -66,14 +62,14 @@ final class GameView: UIView{
     private func config(){
         setFlipButton()
         setStartButton()
-        getGameBoardView()
+        setupGameBoardView()
     }
     func placeCardOnBoard(cards: [UIView]){
         for card in cards{
             let randomXCoordinate = Int.random(in: 0...maxXCoordinate)
             let randomYCoordinate = Int.random(in: 0...maxYCoordinate)
             card.frame.origin = CGPoint(x: (randomXCoordinate), y: (randomYCoordinate))
-            self.addSubview(card)
+            boardGameView?.addSubview(card)
         }
     }
 }
