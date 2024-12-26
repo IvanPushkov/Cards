@@ -1,9 +1,4 @@
-//
-//  CardViewFactory.swift
-//  Cards
-//
-//  Created by Ivan Pushkov on 15.10.2024.
-//
+
 
 import UIKit
 
@@ -26,7 +21,7 @@ class CardViewFactory{
         }
     }
     
-    private func getViewColorBy(modelColor: CardColor) -> UIColor{
+    func getViewColorBy(modelColor: CardColor) -> UIColor{
         switch modelColor{
         case .black:
             return .black

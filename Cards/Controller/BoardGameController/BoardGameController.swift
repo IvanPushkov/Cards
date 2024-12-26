@@ -2,23 +2,18 @@
 
 import UIKit
 
-class BoardGameController: UIViewController {
+final class BoardGameController: UIViewController {
     
-    private var flippedCards = [UIView]()
     private let gameView = GameView()
+    private var flippedCards = [UIView]()
     var cardViews = [UIView]()
-    var cardPairsAmount = SettingModel.instance.amounrPairs
-    
-    lazy var game = getNewGame()
+    lazy var game = Game.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTargetsToButtons()
-        view = gameView
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         navigationItem.backButtonTitle = "Назад"
+        view = gameView
+        getTargetsToButtons()
     }
     
     private func getTargetsToButtons(){
@@ -27,10 +22,7 @@ class BoardGameController: UIViewController {
     }
     private func getNewGame() -> Game{
         removeOldCards()
-        let game = Game()
-        game.startCardAmount = cardPairsAmount
-        game.corentCardAmount = cardPairsAmount
-        game.generateCards()
+        game.startNewGame()
         return game
     }
     
@@ -54,19 +46,22 @@ class BoardGameController: UIViewController {
         return cardViews
     }
     
-    private func activateCards(){
+    private func activateAllCards(){
         for card in cardViews{
-            (card as! FlippableView).complectionHandler = {[self] flippedCard in
-                flippedCard.superview?.bringSubviewToFront(flippedCard)
-                if flippedCard.isFlipped{
-                    self.flippedCards.append(flippedCard)
-                } else {
-                    if let cardIndex = self.flippedCards.firstIndex(of: flippedCard){
-                        self.flippedCards.remove(at: cardIndex )
-                    }
+            activateCard(card)
+        }
+    }
+    private func activateCard(_ card: UIView){
+        (card as! FlippableView).complectionHandler = {[self] flippedCard in
+            flippedCard.superview?.bringSubviewToFront(flippedCard)
+            if flippedCard.isFlipped{
+                self.flippedCards.append(flippedCard)
+            } else {
+                if let cardIndex = self.flippedCards.firstIndex(of: flippedCard){
+                    self.flippedCards.remove(at: cardIndex )
                 }
-                checkFlippedCards()
             }
+            checkFlippedCards()
         }
     }
     
@@ -98,7 +93,6 @@ class BoardGameController: UIViewController {
                 }
             }
     }
-    
     private func finishGame(){
         game.tryToSaveNewScore()
         let alert = UIAlertController(title: "Игра окончена", message: game.getFinalResult(), preferredStyle: .alert)
@@ -115,12 +109,11 @@ class BoardGameController: UIViewController {
     private func goToRecords(){
         navigationController?.pushViewController(RecordsController(), animated: true)
     }
-    
     @objc func startGame(){
         game = getNewGame()
         let cards = getCardsBy(modelData: game.cards)
         gameView.placeCardOnBoard(cards: cards)
-        activateCards()
+        activateAllCards()
     }
     @objc func flipAllCards(){
         game.increaseScore()
